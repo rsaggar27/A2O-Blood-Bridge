@@ -1,0 +1,230 @@
+body {
+    font-family: Poppins, sans-serif;
+    background-color: #d7d6d6;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar{
+    width: 0px;
+}
+h2{
+    /* font-size: 4rem; */
+    padding-bottom: 50px;
+}
+#Username{
+    font-size: 3rem;
+    font-weight: bolder;
+   
+}
+
+
+/* .container {
+    background-color: #FFDB89;
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+} */
+
+/* .grid-container {
+    display: grid;
+    grid-template-columns: auto 1fr; 
+    grid-template-rows: auto; 
+    gap: 20px; 
+    margin: 90px;
+} */
+a{
+    color: #fff;
+}
+#heading{
+    color: #fff;
+    margin: 5px;
+    height: auto;
+    padding: 5px;
+}
+.grid-container-outer{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: auto;
+    height: 100vh;
+    /* background-color: #DC0000; */
+}
+.grid-container-inner{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    background-color: #fff;
+    padding: 50px;
+    gap: 10px;
+}
+.row-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 20px;
+}
+.row-3{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    grid-template-rows: 1fr;
+}
+.row-5{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    grid-template-rows: 1fr;
+}
+.left-solid
+{
+    grid-column: 1;
+    background-color: #af0202;
+}
+/* .profile-photo {
+    grid-column: 2; 
+    grid-row:1; 
+    box-shadow: 0 0 10px rgba(176, 27, 27, 0.1); 
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 8px;
+    
+} */
+
+/* .profile-details {
+    grid-column: 2; 
+    grid-row: 1; 
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    border-radius: 8px;
+    color: #DC0000;
+   
+} */
+/* .box-1{
+    background-color: #d7d6d6;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 8px;
+} */
+/* .profile-photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+} */
+
+.detail {
+    margin-bottom: 25px;
+}
+
+.detail label {
+    font-weight: bold;
+}
+
+.detail span {
+    margin-left: 10px;
+}
+#saveChanges{
+    margin: 2vw 2vw 0 0;
+    /* border: 3px solid #ffffff; */
+    padding: 10px;
+    color: #ffffff;
+    width: 8vw;
+    text-align: center;
+    font-weight: 600;
+    background-color: #af0202;
+}
+.form-floating {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.form-floating input,
+.form-floating textarea {
+    height: 40px;
+    width: 100%;
+    padding: .75rem;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    background-color: transparent;
+}
+
+.form-floating label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    padding: .75rem .5rem;
+    font-size: 1rem;
+    transition: all .3s;
+    color: #6c757d;
+}
+
+.detail .form-floating input:focus,
+.detail .form-floating input:not(:placeholder-shown),
+.detail .form-floating textarea:focus,
+.detail .form-floating textarea:not(:placeholder-shown) {
+    padding-top: 1.25rem;
+    padding-bottom: .25rem;
+    margin-top: 1rem;
+    border-color: #dc3545;
+}
+
+.detail .form-floating input:focus + label,
+.detail .form-floating input:not(:placeholder-shown) + label,
+.detail .form-floating textarea:focus + label,
+.detail .form-floating textarea:not(:placeholder-shown) + label {
+    transform: translateY(-50%);
+    font-size: .75rem;
+    color: #dc3545;
+}
+
+.navbar{
+    width: 100vw;
+    height: 60px;
+    background-color: #af0202;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:space-around;
+    /* padding: 0 2vw;  */
+}
+.navLeft{
+    margin-left: 0vw;
+    display: flex;
+    justify-content: flex-start; /* Align items to the left */
+    padding-left: 2vw; /* Adjust left padding */
+    font-weight: bold;
+}
+.navRight{
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: bold;
+    justify-content: center;
+    justify-items: center;
+    padding-right: 2vw; /* Adjust right padding */
+}
+.button1{
+    margin-top: 8px;
+    margin-inline: 10px;
+    color: white; 
+    text-decoration: none;   
+}
+/* #navCenter{
+    width: 10vw;
+    height: 5vh;
+} */
+#navLogo{
+    flex-wrap: wrap;
+    align-items: center;
+    height: 40px;
+}
+/* #navLeft p,
+#navRight p {
+    margin-right: 1rem; 
+} */
