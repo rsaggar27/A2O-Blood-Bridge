@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    font-family: Arial;
+    box-sizing: border-box;
+}
+.secl1{
+    height: 35vw;
+    background-color: #af0202;
+    width: 100vw;
+}
+::-webkit-scrollbar {
+    width: 0px; 
+}
+.top{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#logo{
+    height:19vw;
+    margin-top: 6vw;
+}
+.btn{
+    margin: 2vw 2vw 0 0;
+    border: 3px solid #ffffff;
+    padding: 10px;
+    color: #ffffff;
+    width: 8vw;
+    text-align: center;
+    font-weight: 600;
+}
+.card{
+    height: 30vh;
+    background-color: #faf9eb;
+    width:20vw;
+}
+.secl2{
+    background-color: #faf9eb;
+}
