@@ -20,7 +20,16 @@
     height:19vw;
     margin-top: 6vw;
 }
-.btn{
+#btn1{
+    margin: 2vw 2vw 0 0;
+    border: 3px solid #ffffff;
+    padding: 10px;
+    color: #ffffff;
+    width: 8vw;
+    text-align: center;
+    font-weight: 600;
+}
+#btn2{
     margin: 2vw 2vw 0 0;
     border: 3px solid #ffffff;
     padding: 10px;
@@ -36,4 +45,30 @@
 }
 .secl2{
     background-color: #faf9eb;
+}
+
+ /* Custom CSS */
+ .btn-login {
+    background-color: #f8d7da; /* Light red color */
+    border-color: #f8d7da; /* Light red color */
+    color: #721c24; /* Dark red color */
+    font-size: 0.8rem; /* Reduced font size */
+    padding: 0.2rem 0.5rem; /* Reduced padding */
+}
+
+.btn-login:hover {
+    background-color: #f8d7da !important;
+    border-color: #f8d7da !important;
+    color: #721c24 !important;
+}
+
+.btn-submit {
+    background-color: #8b0000 !important; /* Blood-red color */
+    border-color: #8b0000 !important; /* Blood-red color */
+    color: white !important; /* White text color */
+}
+
+.btn-submit:hover {
+    background-color: #610000 !important; /* Darker blood-red color on hover */
+    border-color: #610000 !important; /* Darker blood-red color on hover */
 }
