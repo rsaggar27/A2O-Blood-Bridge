@@ -23,7 +23,7 @@ body{
     justify-content:space-between;
 }
 #navLeft{
-    margin-left: 0vw;
+    margin-left: -3vw;
     display: flex;
     width: 45vw;
     justify-content: left;
@@ -157,4 +157,15 @@ a{
     padding-top: 20px;
     width: 300px;
     margin-left: 40vw;
+}
+.btn1{
+    background-color: #af0202;
+    justify-content: center;
+    margin: 2vw 2vw 0 2vw;
+    border: 1px solid #000000;
+    padding: 10px;
+    color: #ffffff;
+    width: 8vw;
+    text-align: center;
+    font-weight: 600;
 }
