@@ -69,15 +69,22 @@
             // console.log(kuchEmail);
             $.ajax(obj).done(function (respJsonAry) {
 
-                $("#txtName").val(respJsonAry[0].cname);
-                $("#txtNumber").val(respJsonAry[0].cnumber);
+                $("#txtName").val(respJsonAry[0].fullname);
+                $("#txtMobile").val(respJsonAry[0].mobile);
                 $("#txtAdd").val(respJsonAry[0].address);
                 $("#selCity").val(respJsonAry[0].city);
                 $("#selState").val(respJsonAry[0].state);
-                $("#hdnImg").val(respJsonAry[0].ppic);
-                $("#prevBox").prop("src", "uploads/" + respJsonAry[0].ppic);
+                $("#selGender1").val(respJsonAry[0].gender);
+                $("#txtDate").val(respJsonAry[0].dob);
+                $("#selBlood").val(respJsonAry[0].bloodgroup);
+                $("#txtMedHis").val(respJsonAry[0].medhistory);
+                console.log(respJsonAry);
+                // $("#prevBox").prop("src", "uploads/" + respJsonAry[0].ppic);
+                
+
 
             }).fail(function (err) {
+                console.log(err);
                 alert(err.message);
             });
 
@@ -154,7 +161,7 @@
     /* padding: 0 2vw;  */
 }
 .navLeft{
-    margin-left: 0vw;
+    margin-left: -15vw;
     display: flex;
     justify-content: flex-start; /* Align items to the left */
     padding-left: 2vw; /* Adjust left padding */
@@ -167,6 +174,7 @@
     justify-content: center;
     justify-items: center;
     padding-right: 2vw; /* Adjust right padding */
+    margin-right: -15vw;
 }
 .button1{
     margin-top: 8px;
@@ -264,7 +272,7 @@ a{
             <div class="row">
                 <div class="col-md-6">
                     <label for="" class="form-floating">Email ID</label>
-                    <input type="email" class="form-control" id="txtEmail" name="txtEmail" >
+                    <input type="email" class="form-control" id="txtEmail" name="txtEmail" disabled>
                 </div>
             </div>
             <div class="row">
@@ -274,7 +282,7 @@ a{
                 </div>
                 <div class="col-md-4">
                     <label for="" class="form-floating">Contact Number</label>
-                    <input type="text" class="form-control" id="txtNumber" name="txtNumber">
+                    <input type="text" class="form-control" id="txtMobile" name="txtMobile">
                 </div>
             </div>
             <!-- 3 fields added -->
@@ -284,12 +292,28 @@ a{
                     <input type="date" class="form-control" id="txtDate" name="txtDate">
                 </div>
                 <div class="col-md-4">
-                    <label for="" class="form-floating">Blood Group</label>
-                    <input type="text" class="form-control" id="txtName" name="txtName">
+                    <label for="selBlood" class="form-floating">Blood Group</label>
+                    <select class="form-select" id="selBlood" name="selBlood">
+                        <option value="Select" selected disabled>Select</option>
+                        <option value="A+">A+</option>
+                        <option value="B+">B+</option>
+                        <option value="AB+">AB+</option>
+                        <option value="O+">O+</option>
+                        <option value="A-">A-</option>
+                        <option value="B-">B-</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O-">O-</option>
+                        <!-- <option value="Rather not say">Rather not say</option> -->
+                    </select>
                 </div>
                 <div class="col-md-4">
-                    <label for="" class="form-floating">Gender</label>
-                    <input type="text" class="form-control" id="txtNumber" name="txtNumber">
+                    <label for="selGender" class="form-floating">Gender</label>
+                    <select class="form-select" id="selGender1" name="selGender1">
+                        <option value="Select" selected disabled>Select</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Rather not say">Rather not say</option>
+                    </select>
                 </div>
             </div>
             <div class="row">
@@ -988,7 +1012,7 @@ a{
             <!-- Medical History Input -->
             <div class="col-md-4" id="med-history">
                 <label for="" class="form-floating">Medical History</label>
-                <textarea class="form-control" id="txtText" name="txtText"></textarea>
+                <textarea class="form-control" id="txtMedHis" name="txtMedHis"></textarea>
             </div>
             
             
@@ -1009,7 +1033,7 @@ a{
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="chkTerms"
+                        <input class="form-check-input-danger" type="checkbox" value="" id="chkTerms"
                             onclick="termsCheck(this,btnSave)">
                         <label class="form-check-label" for="flexCheckDefault">
                             By ticking this box,you agree to our <a href="TermsAndCondtions.html">Terms and
