@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-y: hidden;
+            background-size: cover; /* Cover the entire viewport */
+            font-family: Arial, sans-serif; /* Use a fallback font if the primary font is not available */
+        }
+        
+        .container {
+            display: flex;
+            align-items: center; /* Center items vertically */
+            justify-content: center; /* Center items horizontally */
+            height: 100vh; /* Set the container height to fill the viewport */
+            padding: 0px;
+        }
+        
+        .image-container {
+            margin-right: 32px; /* Adjust spacing between image and form */
+            padding: 0px;
+        }
+        
+        .form {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for form */
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            font-weight: bold;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 4px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .btn-submit {
+            width: 108%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #8b0000; /* Blood red */
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-submit:hover {
+            background-color: #610000; /* Darker blood red on hover */
+        }
+        
+        .heading {
+            text-align: center;
+            font-size: 129px; /* Adjusted font size */
+            margin-bottom: -120px; /* Adjusted margin */
+            color: #8b0000; /* Blood red color */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Best font style */
+        }
+        
+        
+    </style>
+    <title>Best Form</title>
+</head>
+<body>
+    <h1 class="heading">Blood Search</h1>
+    <div class="container">
+        <div class="image-container">
+            <img src="../Assets/formblood.png">
+        </div>
+        <div class="form">
+            <form class="form">
+                <div class="form-group">
+                    <label for="blood-group">Blood Group</label>
+                    <input type="text" id="blood-group" name="blood-group" class="form-control" placeholder="Enter your blood group">
+                </div>
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" class="form-control" placeholder="Enter your city">
+                </div>
+                
+                <button type="submit" class="btn-submit">Search</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
