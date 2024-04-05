@@ -105,11 +105,11 @@
             <div class="row">
                 <div class="col-md-6">
                     <label for="" class="form-floating">Email ID</label>
-                    <input type="email" class="form-control" id="txtEmail" name="txtEmail"
-                        value=" ">
+                    <input type="email" class="form-control" id="txtEmail" name="txtEmail" value="">
                 </div>
                 
-            </div>
+            
+            
             <div class="row">
                 <div class="col-md-4 mt-2">
                     <label for="" class="form-floating">Name</label>
@@ -818,13 +818,52 @@
                     </select>
                 </div>
             </div>
+            <div class="col-md-6">
+                <label for="bloodGroup" class="form-floating">Blood Group</label>
+                <select class="form-select" id="bloodGroup" name="bloodGroup">
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+            </div>
+             
+        </div>
             <div class="row">
-                <div class="col-md-6 mt-2">
-                    <label for="" class="form-floating">Working Since</label>
+                <div class="col-md-4 mt-2">
+                    <label for="" class="form-floating">Hospital Name</label>
+                    <input type="text" class="form-control" id="txtHospitalName" name="txtHospitalName" value="">
+                </div>
+                <div class="col-md-4 mt-2">
+                    <label for="" class="form-floating">Hospital Id</label>
+                    <input type="text" class="form-control" id="txtHospitalId" name="txtHospitalId" value="">
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="bloodGroup" class="form-floating">Number of Units</label>
+                    <select class="form-select" id="bloodGroup" name="bloodGroup">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <label for="" class="form-floating">Date Of Birth</label>
                     <input type="date" class="form-control" id="dtSince" name="dtSince">
                 </div>
             </div>
-        
+            
             <div class="row mt-2">
                 <div class="col-md-12">
                     <label for="exampleFormControlTextarea1" class="form-floating">Specialisation</label>
@@ -848,7 +887,7 @@
                 
                 <div class="col-md-3">
                     <br>
-                    <input type="submit" class="btn btn-primary" value="Save Profile" id="btnSave" disabled
+                    <input type="submit" class="btn btn-primary" value="Request" id="btnSave" disabled
                         formaction="/profile-provider-save">
                 </div>
             </div>
