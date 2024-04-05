@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    font-family: Arial;
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0px; 
+}
+
+
+.navbar{
+    width:100vw;
+    height:8vh;
+    background-color: #af0202;
+    color:white;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:space-between;
+}
+#navLeft{
+    margin-left: 0vw;
+    display: flex;
+    width: 45vw;
+    justify-content: left;
+    padding-left: 4vw;
+    font-weight: bold;
+}
+#navRight{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    right: 0px;
+    width: 45vw;
+    font-weight: bold;
+}
+#navCenter{
+    width: 10vw;
+    height: 5vh;
+}
+#navLogo{
+    flex-wrap: wrap;
+    align-items: center;
+    height: 5vw;
+}
+.button{
+    margin: 1vw;
+    margin-inline: 3vw;
+}
+a{
+    color: white;
+}
+.sec1{
+    height: 32vw;
+    background-color: #af0202;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#sec1left{
+    width: 65vw;
+    padding: 5vw;
+    padding-left: 8vw;
+}
+#quote{
+    width: 40vw;
+}
+#sec1right{
+    margin-top: 1.5vw;
+}
+#handpic{
+    width: 35vw;
+    justify-content: right;
+}
+
+
+.sec2{
+    display: flex;
+    background-color: #faf9eb;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.left2{
+    padding: 5vw;
+    padding-left: 8vw;
+    width: 70vw;
+    flex-grow: 1;
+    min-width: 540px;
+    justify-content: center;
+}
+.right2{
+    padding: 5vw 0 5vw 0vw;
+    width: 30vw;
+    height: 70vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#BDC{
+    height: 15vw;
+}
+#callender{
+    height: 5vh;
+}
+#date {
+    font-size:xx-large;
+    font-weight: bolder;
+    color: black;
+}
+#location {
+    font-size:xx-large;
+    font-weight: bolder;
+    color: black;
+}
+.img2{
+    width: 100vw;
+    height: auto;
+    background-image: url(../Assets/landing/Donate_pic.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    justify-content: center;
+}
+.sec3{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(255, 92, 100, 0.454);
+}
