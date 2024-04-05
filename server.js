@@ -129,7 +129,7 @@ app.get("/message-sent", function (req, resp) {
     }
   );
 });
-
+//create table reviews(rid int auto_increment primary key,email varchar(100), message varchar(1000));
 app.get("/fetch-one", function (req, resp) {
   console.log(req.query);
   mysql.query(
@@ -158,7 +158,7 @@ app.post("/profile-save", function (req, resp) {
   const gender = req.body.selGender1;
   const bloodgroup = req.body.selBlood;
   const medhistory = req.body.txtMedHis;
-  const dob=req.body.txtDate;
+  const dob = req.body.txtDate;
   //   //pic-uploading
 
   //   let filename;
@@ -173,7 +173,18 @@ app.post("/profile-save", function (req, resp) {
 
   mysql.query(
     "update users set fullname=?,dob=?, mobile=?, address=?,gender=? ,city=?, state=?, bloodgroup=?,medhistory=? where email=? ",
-    [fullname,dob,mobile,address,gender, city, state,bloodgroup,medhistory, email],
+    [
+      fullname,
+      dob,
+      mobile,
+      address,
+      gender,
+      city,
+      state,
+      bloodgroup,
+      medhistory,
+      email,
+    ],
     function (err, respJson) {
       if (err == null) {
         console.log("RECORD UPDATED SUCCESSFULLY");
@@ -186,7 +197,100 @@ app.post("/profile-save", function (req, resp) {
     }
   );
 });
+// create table bloodbanks(bbname varchar(100), city varchar(100), Apos varchar(10),Bpos varchar(10),ABpos varchar(10),Opos varchar(10),Aneg varchar(10),Bneg varchar(10),ABneg varchar(10),Oneg varchar(10));
+// app.get("/request-blood",function(req,resp){
+// console.log(req.query);
+// const units=req.query.kuchUnits;
+// const bloodgroup=req.query.bloodgroup;
+// const city= req.query.city;
 
-app.get("/request-blood",function(req,resp){
-    
-})
+// mysql.query("SELECT * FROM bloodbanks WHERE city=? and CASE WHEN ? = 'A+' THEN Apos  WHEN ? = 'B+' THEN Bpos WHEN ? = 'AB+' THEN ABpos WHEN ? = 'O+' THEN Opos WHEN ? = 'A-' THEN Aneg WHEN ? = 'B-' THEN Bneg WHEN ? = 'AB-' THEN ABneg WHEN ? = 'O-' THEN Oneg END >= ?;",[city,bloodgroup,bloodgroup,bloodgroup,bloodgroup,bloodgroup,bloodgroup,bloodgroup,bloodgroup,units],function(err,respJsonAry){
+//     console.log("i am here")
+//     if(err!=null){
+//         resp.send(err);
+//     }
+//     console.log(respJsonAry);
+//     resp.send(respJsonAry);
+// })
+
+// })
+// //create table requests(rid int auto_increment primary key,email varchar(100), fullname varchar(100), mobile varchar(20), gender varchar(10), city varchar(100),state varchar(100), bloodgroup varchar(10), dob date, hospitalname varchar(100), hospitalid varchar(100), medhistory varchar(1000));
+
+app.get("/search-blood", function (req, resp) {
+  console.log(req.query);
+  const units = req.query.kuchUnits;
+  const bloodgroup = req.query.bloodgroup;
+  const city = req.query.city;
+  mysql.query(
+    "SELECT * FROM bloodbanks WHERE city=? and CASE WHEN ? = 'A+' THEN Apos  WHEN ? = 'B+' THEN Bpos WHEN ? = 'AB+' THEN ABpos WHEN ? = 'O+' THEN Opos WHEN ? = 'A-' THEN Aneg WHEN ? = 'B-' THEN Bneg WHEN ? = 'AB-' THEN ABneg WHEN ? = 'O-' THEN Oneg END >= ?;",
+    [
+      city,
+      bloodgroup,
+      bloodgroup,
+      bloodgroup,
+      bloodgroup,
+      bloodgroup,
+      bloodgroup,
+      bloodgroup,
+      bloodgroup,
+      units,
+    ],
+    function (err, respJsonAry) {
+      console.log("i am here");
+      if (err != null) {
+        resp.send(err);
+      }
+      console.log(respJsonAry);
+      resp.send(respJsonAry);
+    }
+  );
+});
+
+app.get("/save-donation", function (req,resp) {
+  const email = req.query.kuchEmail;
+  const fullname = req.query.kuchName;
+  const mobile = req.query.kuchMobile;
+//   const address = req.query.kuchAdd;
+  const city = req.query.kuchCity;
+  const state = req.query.kuchState;
+  const gender = req.query.kuchGender;
+  const bloodgroup = req.query.kuchBlood;
+  const medhistory = req.query.kuchMedHis;
+  const dob = req.query.kuchDate;
+  //   //pic-uploading
+
+  //   let filename;
+  //   if (req.files == null) {
+  //     filename = "nopic.jpg";
+  //   } else {
+  //     filename = req.files.ppic.name;
+  //     let path = process.cwd() + "/public/uploads/" + filename;
+  //     req.files.ppic.mv(path);
+  //   }
+  //   req.body.ppic = filename; //why this?
+
+  mysql.query(
+    "insert into bloodDonations values(0,?,?,?,?,?,?,?,?,?,current_date); ",
+    [
+      email,
+      mobile,
+      fullname,
+      dob,
+      bloodgroup,
+      gender,
+      city,
+      state,
+      medhistory,
+    ],
+    function (err, respJson) {
+      if (err == null) {
+        console.log("Registered Successfully");
+        // window.location = '/Frontend/html/customer-profile.html';
+        // return
+        resp.send("Registered Successfully");
+      } else {
+        resp.send(err.message);
+      }
+    }
+  );
+});

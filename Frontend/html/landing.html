@@ -1,21 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" type="text/css" href="../css/landing.css">
+
+    <!-- BootStrap Links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <!-- Fonts Linking -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Slab">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poiret One">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Protest Strike">
+
+    <!-- Jquery -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!-- AJAX -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<!-- ============================================================================================= -->
+
+<script>
+    $(document).ready(function(){
+        $("#btnRegg").click(function(){
+            window.location='/html/DonorForm.html'
+        })
+    })
+</script>
 </head>
+
 <body>
     <div class="navbar merriweather-regular">
         <div id="navLeft">
             <p class="button"><a style="transition: color 3s ease;" href="#UPBB">Donate</a></p>
-            <p class="button">Request</p>
-            <p class="button"><a href="../html/customer-profile.html">Profile</a></p>
+            <p class="button"><a href="/html/BloodReqForm.html">Request</a></p>
+            <p class="button"><a href="/html/customer-profile.html">Profile</a></p>
         </div>
         <div id="navCenter">
-            <img id="navLogo" src="../Assets/white_logo.png"/>
+            <img id="navLogo" src="../Assets/white_logo.png" />
         </div>
         <div id="navRight">
             <p class="button">Contact Us</p>
@@ -25,53 +57,64 @@
     </div>
     <div class="sec1">
         <div id="sec1left">
-            <img id="quote" src="../Assets/landing/quote_white.png"/>
+            <img id="quote" src="../Assets/landing/quote_white.png" />
         </div>
         <div id="sec1right">
-            <img id="handpic" src="../Assets/landing/Handpic.png"/>
+            <img id="handpic" src="../Assets/landing/Handpic.png" />
         </div>
     </div>
     <div class="sec3">
         <div class="right3">
             <h1 style="font-size: 50px;">Who we are...?</h1>
-            <p style="line-height: 30px;"><br/><br/>At A2O Blood Bridge, our commitment goes beyond mere transactions; we're driven by a profound sense of responsibility to our communities. With empathy and expertise, we navigate the intricate web connecting donors, blood banks, and patients, ensuring seamless access to life-saving resources. Our relentless dedication to excellence fuels our efforts to innovate and streamline the blood donation process, making it more accessible and impactful than ever before. By empowering donors and advocating for patients, we stand as a beacon of hope in the face of adversity. Join us in our mission to heal, support, and uplift lives—because together, we are the heartbeat of compassion.
+            <p style="line-height: 30px;"><br /><br />At A2O Blood Bridge, our commitment goes beyond mere transactions;
+                we're driven by a profound sense of responsibility to our communities. With empathy and expertise, we
+                navigate the intricate web connecting donors, blood banks, and patients, ensuring seamless access to
+                life-saving resources. Our relentless dedication to excellence fuels our efforts to innovate and
+                streamline the blood donation process, making it more accessible and impactful than ever before. By
+                empowering donors and advocating for patients, we stand as a beacon of hope in the face of adversity.
+                Join us in our mission to heal, support, and uplift lives—because together, we are the heartbeat of
+                compassion.
             </p>
         </div>
         <div class="left3">
-                <img class="img1" src="../Assets/landing/p2.png"/>
+            <img class="img1" src="../Assets/landing/p2.png" />
         </div>
     </div>
     <div style="background-color: #faf9eb;">
-        <img class="our" src="../Assets/landing/our.png"/>
+        <img class="our" src="../Assets/landing/our.png" />
         <div class="sec4">
-            <img class="MVR" src="../Assets/landing/Mission.png"/>
-            <img class="MVR" src="../Assets/landing/Vision.png"/>
-            <img class="MVR" src="../Assets/landing/Responsibility.png"/>
+            <img class="MVR" src="../Assets/landing/Mission.png" />
+            <img class="MVR" src="../Assets/landing/Vision.png" />
+            <img class="MVR" src="../Assets/landing/Responsibility.png" />
         </div>
     </div>
     <div class="sec3">
         <div class="left3">
-                <img style="margin-left: 200px;height: 300px;" class="img1" src="../Assets/landing/Benifits.png"/>
+            <img style="margin-left: 200px;height: 300px;" class="img1" src="../Assets/landing/Benifits.png" />
         </div>
-        <div  class="right3">
+        <div class="right3">
             <h1 style="font-size: 50px;">Benifits of Blood Donation</h1>
-            <p><br/><br/>Blood donation offers several benefits for donors. It helps regulate iron levels and reduces the risk of cardiovascular diseases by improving blood circulation. Donors also receive health screenings, promoting early detection of health issues. Beyond physical benefits, donating blood boosts emotional well-being and burns calories. Moreover, altruistic acts like blood donation may contribute to longevity, enhancing both donors' health and well-being.
+            <p><br /><br />Blood donation offers several benefits for donors. It helps regulate iron levels and reduces
+                the risk of cardiovascular diseases by improving blood circulation. Donors also receive health
+                screenings, promoting early detection of health issues. Beyond physical benefits, donating blood boosts
+                emotional well-being and burns calories. Moreover, altruistic acts like blood donation may contribute to
+                longevity, enhancing both donors' health and well-being.
             </p>
         </div>
     </div>
 
     <div id="UPBB" class="sec2">
         <div class="left2">
-            <img id="BDC" src="../Assets/landing/BDC.png"/>
+            <img id="BDC" src="../Assets/landing/BDC.png" />
             <div>
-                <img id="callender" src="../Assets/landing/Callender.png"/>
+                <img id="callender" src="../Assets/landing/Callender.png" />
                 <span id="date"></span>
             </div>
             <div>
-                <img id="callender" src="../Assets/landing/Location.png"/>
+                <img id="callender" src="../Assets/landing/Location.png" />
                 <span id="location"></span>
             </div>
-            <div class="btn1">Register</div>
+            <button class="btn1" id="btnRegg">Register</button>
         </div>
         <div class="right2">
             <div class="img2"></div>
@@ -80,16 +123,16 @@
     <!-- <img src="../Assets/landing/footerImg.jpg" style="width: 100vw;"> -->
 
     <footer>
-        <img id="logo" src="../Assets/white_logo.png"/>
-        <br/>
+        <img id="logo" src="../Assets/white_logo.png" />
+        <br />
         <div style="margin-bottom: -40px;" class="container">
             <div class="footer-content">
                 <h3 style="margin-top: -15px;">Contact Us</h3>
                 <p>Email: AtoObloodbridge@gmail.com</p><br>
-                <p>Phone:  +91 74173 45233</p><br>
+                <p>Phone: +91 74173 45233</p><br>
                 <p>Address: Aravali hostel</p><br>
                 <p>Organisation: PEC Student</p>
-                
+
             </div>
             <div class="footer-content">
                 <h3 style="margin-top: 5px; margin-left: 40px">Quick Links</h3>
@@ -106,26 +149,32 @@
                 <ul style="margin-left: -30px;" class="social-icons">
                     <li><a href="#">Prasuk Jain</i></a></li>
                     <br>
-                    <li><a href="https://www.linkedin.com/in/aditya-shrikul-54681324b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">Aditya Shrikul</i></a></li><br>
-                    <li><a href="https://www.linkedin.com/in/rishabh-saggar-95944128b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">Rishabh Saggar</i></a></li><br>
-                    <li><a href="https://www.linkedin.com/in/keshav-arora-a6280b25a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">Keshav Arora</i></a></li><br>
-                    <li><a href="https://www.linkedin.com/in/prabhjot-singh-bajwa-5a4999253?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">Prabhjot Bajwa</i></a></li><br>
-                    <li><a href="https://www.linkedin.com/in/krittika-jari-676897268?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">Kritika Jhari</i></a></li><br>
+                    <li><a
+                            href="https://www.linkedin.com/in/aditya-shrikul-54681324b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">Aditya
+                            Shrikul</i></a></li><br>
+                    <li><a
+                            href="https://www.linkedin.com/in/rishabh-saggar-95944128b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">Rishabh
+                            Saggar</i></a></li><br>
+                    <li><a
+                            href="https://www.linkedin.com/in/keshav-arora-a6280b25a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">Keshav
+                            Arora</i></a></li><br>
+                    <li><a
+                            href="https://www.linkedin.com/in/prabhjot-singh-bajwa-5a4999253?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">Prabhjot
+                            Bajwa</i></a></li><br>
+                    <li><a
+                            href="https://www.linkedin.com/in/krittika-jari-676897268?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">Kritika
+                            Jhari</i></a></li><br>
                     <li><a href="#"></i></a></li>
                 </ul>
             </div>
         </div>
-        
+
         <div class="bottom-bar">
-            <p>&copy; 2024  Your Company. All rights reserved</p>
+            <p>&copy; 2024 Your Company. All rights reserved</p>
         </div>
     </footer>
 
     <script src="../js/landing.js"></script>
 </body>
+
 </html>
-
-
-
-
-

@@ -28,15 +28,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
 
-    <script>//profile preview
-        function doShowPic(refFile, refImg) {
-            const [file] = refFile.files
-            if (file) {
-                refImg.src = URL.createObjectURL(file)
-            }
-        }
-    </script>
 
+    <script>//email passing
+        $(document).ready(function () {
+    
+            let user = localStorage.getItem("user");
+            //alert(user);
+            $("#txtEmail").val(user);
+        })
+    </script>
     <script>//checkbox
 
         function termsCheck(chkTerms, btnSave) {
@@ -50,41 +50,66 @@
 
     </script>
 
-    <script>//fetch record
-        $(document).ready(function () {
-            $("#btnSearch").click(function () {
-                let obj = {
-                    url: "/fetch-one-provider",
-                    data: {
-                        kuchEmail: $("#txtEmail").val()
-                    }
+<script>//fetch record
+    $(document).ready(function () {
+        // alert();
+        let obj = {
+            url: "/fetch-one",
+            data: {
+                kuchEmail: $("#txtEmail").val()
+            }
+        }
+        // console.log(kuchEmail);
+        $.ajax(obj).done(function (respJsonAry) {
+
+            $("#txtName").val(respJsonAry[0].fullname);
+            $("#txtMobile").val(respJsonAry[0].mobile);
+            // $("#txtAdd").val(respJsonAry[0].address);
+            $("#selCity").val(respJsonAry[0].city);
+            $("#selState").val(respJsonAry[0].state);
+            $("#selGender").val(respJsonAry[0].gender);
+            $("#txtDate").val(respJsonAry[0].dob);
+            $("#selBlood").val(respJsonAry[0].bloodgroup);
+            $("#txtMedHis").val(respJsonAry[0].medhistory);
+            console.log(respJsonAry);
+            // $("#prevBox").prop("src", "uploads/" + respJsonAry[0].ppic);
+            
+
+
+        }).fail(function (err) {
+            console.log(err);
+            alert(err.message);
+        });
+
+    })
+</script>
+<script>
+    $(document).ready(function(){
+        $("#btnSave").click(function(){
+            let obj={
+                url:"/save-donation",
+                data:{
+                    kuchEmail:$("#txtEmail").val(),
+                    kuchName:$("#txtName").val(),
+                    kuchMobile:$("#txtMobile").val(),
+                    kuchGender:$("#selGender").val(),
+                    kuchBlood:$("#selBlood").val(),
+                    // kuchAdd:$("#txtAdd").val(),
+                    kuchCity:$("#selCity").val(),
+                    kuchState:$("#selState").val(),
+                    kuchAdd:$("#txtAdd").val(),
+                    kuchDate:$("#txtDate").val(),
                 }
+            }
 
-                $.ajax(obj).done(function (respJsonAry) {
-
-                    alert(JSON.stringify(respJsonAry));
-
-                    $("#txtPName").val(respJsonAry[0].pname);
-                    $("#txtNumber").val(respJsonAry[0].pnumber);
-                    $("#selGender").val(respJsonAry[0].gender);
-                    $("#txtFAdd").val(respJsonAry[0].faddress);
-                    $("#txtHAdd").val(respJsonAry[0].haddress);
-                    $("#selCity").val(respJsonAry[0].city);
-                    $("#selState").val(respJsonAry[0].state);
-                    $("#selCategory").val(respJsonAry[0].category);
-                    $("#txtFirm").val(respJsonAry[0].firm);
-                    $("#txtWeb").val(respJsonAry[0].website);
-                    $("#dtSince").val(respJsonAry[0].since);
-                    $("otherInfo").val(respJsonAry[0].otherinfo);
-                    $("#prevBox").prop("src", "uploads/" + respJsonAry[0].idPic);
-
-                }).fail(function (err) {
-                    alert(err.message);
-                });
+            $.ajax(obj).done(function(respJson){
+                alert(respJson);
+            }).fail(function(err){
+                alert(err);
             })
         })
-    </script>
-
+    })
+</script>
     <style>
         
     </style>
@@ -102,7 +127,7 @@
             </div>
         </div>
         
-        <form method="post" enctype="multipart/form-data">
+        <form method="get" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-6">
                     <label for="" class="form-floating">Email ID</label>
@@ -114,11 +139,11 @@
             <div class="row">
                 <div class="col-md-4 mt-2">
                     <label for="" class="form-floating">Name</label>
-                    <input type="text" class="form-control" id="txtPName" name="txtPName" value="">
+                    <input type="text" class="form-control" id="txtName" name="txtName" value="">
                 </div>
                 <div class="col-md-4 mt-2">
                     <label for="" class="form-floating">Contact Number</label>
-                    <input type="text" class="form-control" id="txtNumber" name="txtNumber" value="">
+                    <input type="text" class="form-control" id="txtMobile" name="txtMobile" value="">
                 </div>
                 <div class="col-md-4 mt-2">
                     <label for="selGender" class="form-floating">Gender</label>
@@ -821,7 +846,8 @@
             </div>
             <div class="col-md-6">
                 <label for="bloodGroup" class="form-floating">Blood Group</label>
-                <select class="form-select" id="bloodGroup" name="bloodGroup">
+                <select class="form-select" id="selBlood" name="selBlood">
+                    <option value="" disabled>Select</option>
                     <option value="A+">A+</option>
                     <option value="A-">A-</option>
                     <option value="B+">B+</option>
@@ -838,14 +864,14 @@
             <div class="row mt-2">
                 <div class="col-md-6">
                     <label for="" class="form-floating">Date Of Birth</label>
-                    <input type="date" class="form-control" id="dtSince" name="dtSince">
+                    <input type="date" class="form-control" id="txtDate" name="txtDate">
                 </div>
             </div>
             
             <div class="row mt-2">
                 <div class="col-md-12">
-                    <label for="exampleFormControlTextarea1" class="form-floating">Specialisation</label>
-                    <textarea class="form-control" id="otherInfo" name="otherInfo" rows="3"></textarea>
+                    <label for="exampleFormControlTextarea1" class="form-floating">Medical History</label>
+                    <textarea class="form-control" id="txtMidHis" name="txtMedHis" rows="3"></textarea>
                 </div>
             </div>
             <div class="row">
@@ -865,7 +891,7 @@
                 
                 <div class="col-md-3">
                     <br>
-                    <input type="submit" class="btn btn-primary" value="Submit" id="btnSave" disabled
+                    <input type="button" class="btn btn-primary" value="Submit" id="btnSave" disabled
                         formaction="/profile-provider-save">
                 </div>
             </div>
