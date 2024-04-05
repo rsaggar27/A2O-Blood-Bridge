@@ -31,6 +31,8 @@ const objConfig = {
     resp.sendFile(filepath);
   });
 
+  //create table users (email varchar(100), pwd varchar(100), mobile varchar(20), fullname varchar(100), dob date , bloodgroup varchar(20), gender varchar(30), address varchar(200), city varchar(100), state varchar(100), medhistory varchar(300));  
+
   app.get("/sign_up", function (req, resp) {
     const email = req.query.kuchEmail;
     const pwd = req.query.kuchPass;
@@ -91,3 +93,40 @@ const objConfig = {
       }
     );
   });
+
+  app.get("/fetch-contact",function(req,resp){
+    console.log(req.query);
+    mysql.query(
+        "select * from users where email=?",
+        [req.query.kuchEmail],
+        function (err, resultJsonAry) {
+          if (err != null) {
+            alert("Invalid Infomation");
+            console.log(err);
+            resp.send(err);
+            return;
+          }
+          console.log(resultJsonAry);
+          resp.send(resultJsonAry);
+        }
+      );
+  })
+//   create table reviews(rid int auto_increment primary key,email varchar(100), message varchar(1000));
+  app.get("/message-sent",function(req,resp){
+    console.log(req.query);
+    mysql.query(
+
+        "insert into reviews values(?,?,?)",
+        [0,req.query.kuchEmail,req.query.kuchMsg],
+        function (err) {
+          if (err != null) {
+            // alert("Invalid Infomation");
+            console.log(err);
+            resp.send(err);
+            return;
+          }
+          console.log("Response Sent !");
+          resp.send("Response Sent !");
+        }
+      ); 
+  })
