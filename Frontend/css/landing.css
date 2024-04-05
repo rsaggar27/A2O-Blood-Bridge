@@ -128,5 +128,33 @@ a{
 .sec3{
     display: flex;
     flex-wrap: wrap;
-    background-color: rgba(255, 92, 100, 0.454);
+    background-color: #faf9eb;
+    padding: 50px;
+}
+.sec4{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+}
+.MVR{
+    height: 400px;
+    margin: 60px;
+}
+.right3{
+    max-width: 750px;
+    font-size: 22px;
+    line-height: 25px;
+    margin-inline: 50px;
+    margin-top: 30px;
+}
+.img1{
+    height: 400px;
+    margin: 20px 60px;
+}
+.our{
+    display: flex;
+    padding-top: 20px;
+    width: 300px;
+    margin-left: 40vw;
 }
