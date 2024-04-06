@@ -75,20 +75,85 @@ $("#txtEmail").val(user);
             });
         })
     })
-</script>
-</head>
+    </script>
+    <style>
+                .navbar {
+            width: 100vw;
+            height: 60px;
+            background-color: #af0202;
+            color: white;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+            /* padding: 0 2vw;  */
+        }
+
+        .navLeft {
+            margin-left: -15vw;
+            display: flex;
+            justify-content: flex-start;
+            /* Align items to the left */
+            padding-left: 2vw;
+            /* Adjust left padding */
+            font-weight: bold;
+        }
+
+        .navRight {
+            display: flex;
+            flex-wrap: wrap;
+            font-weight: bold;
+            justify-content: center;
+            justify-items: center;
+            padding-right: 2vw;
+            /* Adjust right padding */
+            margin-right: -15vw;
+        }
+
+        .button1 {
+            margin-top: 8px;
+            margin-inline: 10px;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* #navCenter{
+    width: 10vw;
+    height: 5vh;
+} */
+        #navLogo {
+            flex-wrap: wrap;
+            align-items: center;
+            height: 40px;
+        }
+
+        .btn-primary {
+            background-color: #af0202;
+        }
+
+        .btn-primary:disabled {
+            background-color: #af0202b1;
+        }
+
+        a {
+            color: #af0202;
+        }
+    </style>
+    </head>
 <body>
-    <div class="navbar1">
+    <div class="navbar">
         <div class="navLeft">
-            <img id="navLogo" src="../Assets/white_logo.png"/>
+            <img id="navLogo" src="../Assets/white_logo.png" />
         </div>
         <div class="navRight">
-            <p class="button1">Donate</p>
-            <p class="button1">Request</p>
-            <p class="button1"><a class="button1" href="../html/profile.html">Profile</a></p>
-            <p class="button1">Contact Us</p>
-            <p class="button1">AI Assistant</p>
-            <p class="button1">PRAY</p>
+            <p class="button1"><a style="text-decoration:none ;color:white;" href="./DonorForm.html">Donate</a></p>
+            <p class="button1"><a style="text-decoration:none ;color:white;" href="./BloodReqForm.html">Request</a>
+            </p>
+            <p class="button1"><a style="text-decoration:none ;color:white;" class="button1"
+                    href="../html/customer-profile.html">Profile</a></p>
+            <p class="button1"><a style="text-decoration:none ;color:white;" href="./contact.html"> Contact Us</a></p>
+            <p class="button1"><a style="text-decoration:none ;color:white;" href="http://localhost:8000/"></a> </p>
+            <p class="button1"><a style="text-decoration:none ;color:white;" href="./search.html">Search</a></p>
         </div>
     </div>
     <section id="section-wrapper">
