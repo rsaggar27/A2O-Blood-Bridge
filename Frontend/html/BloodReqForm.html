@@ -118,12 +118,37 @@
             alert(response.data);
         }
     }</script> -->
-   
-
-
-    <style>
-
-    </style>
+<script>
+    $(document).ready(function(){
+        // alert();
+        $("#btnReq").click(function(){
+            let obj={
+                url:'/save-request',
+                data:{
+                    kuchEmail:$("#txtEmail").val(),
+                    kuchName:$("#txtName").val(),
+                    kuchMobile:$("#txtMobile").val(),
+                    kuchGender:$("#selGender").val(),
+                    kuchBlood:$("#selBlood").val(),
+                    kuchAdd:$("#txtAdd").val(),
+                    kuchCity:$("#selCity").val(),
+                    kuchState:$("#selState").val(),
+                    // kuchAdd:$("#txtAdd").val(),
+                    kuchDate:$("#txtDate").val(),
+                    kuchHospitalId:$("#txtHospitalId").val(),
+                    kuchHospitalName:$("#txtHospitalName").val(),
+                    kuchUnits:$("#txtUnits").val(),
+                }
+            }
+            $.ajax(obj).done(function(respJson){
+                alert(respJson);
+            }).fail(function(err){
+                console.log(err)
+                alert(err.message);
+            })
+        })
+    })
+</script>   
 
 </head>
 
@@ -137,7 +162,7 @@
                 </center>
             </div>
         </div>
-        <form method="post" enctype="multipart/form-data">
+        <form method="get" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-6">
                     <label for="" class="form-floating">Email ID</label>
@@ -912,8 +937,7 @@
 
                 <div class="col-md-3">
                     <br>
-                    <input type="button" class="btn btn-primary" value="Request" id="btnReq"
-                        formaction="/profile-provider-save">
+                    <input type="button" class="btn btn-primary" value="Request" id="btnReq">
                 </div>
             </div>
         </form>

@@ -218,11 +218,11 @@ app.post("/profile-save", function (req, resp) {
 
 app.get("/search-blood", function (req, resp) {
   console.log(req.query);
-  const units = req.query.kuchUnits;
-  const bloodgroup = req.query.bloodgroup;
-  const city = req.query.city;
+//   const units = req.query.kuchUnits;
+  const bloodgroup = req.query.kuchBlood;
+  const city = req.query.kuchCity;
   mysql.query(
-    "SELECT * FROM bloodbanks WHERE city=? and CASE WHEN ? = 'A+' THEN Apos  WHEN ? = 'B+' THEN Bpos WHEN ? = 'AB+' THEN ABpos WHEN ? = 'O+' THEN Opos WHEN ? = 'A-' THEN Aneg WHEN ? = 'B-' THEN Bneg WHEN ? = 'AB-' THEN ABneg WHEN ? = 'O-' THEN Oneg END >= ?;",
+    "SELECT * FROM bloodbanks WHERE city=? and CASE WHEN ? = 'Apos' THEN Apos  WHEN ? = 'Bpos' THEN Bpos WHEN ? = 'ABpos' THEN ABpos WHEN ? = 'Opos' THEN Opos WHEN ? = 'Aneg' THEN Aneg WHEN ? = 'Bneg' THEN Bneg WHEN ? = 'ABneg' THEN ABneg WHEN ? = 'Oneg' THEN Oneg END >= 0;",
     [
       city,
       bloodgroup,
@@ -232,8 +232,7 @@ app.get("/search-blood", function (req, resp) {
       bloodgroup,
       bloodgroup,
       bloodgroup,
-      bloodgroup,
-      units,
+      bloodgroup
     ],
     function (err, respJsonAry) {
       console.log("i am here");
@@ -250,7 +249,7 @@ app.get("/save-donation", function (req,resp) {
   const email = req.query.kuchEmail;
   const fullname = req.query.kuchName;
   const mobile = req.query.kuchMobile;
-//   const address = req.query.kuchAdd;
+    const address = req.query.kuchAdd;
   const city = req.query.kuchCity;
   const state = req.query.kuchState;
   const gender = req.query.kuchGender;
@@ -294,3 +293,60 @@ app.get("/save-donation", function (req,resp) {
     }
   );
 });
+
+app.get("save-request",function(req,resp){
+    const email = req.query.kuchEmail;
+    const fullname = req.query.kuchName;
+    const mobile = req.query.kuchMobile;
+    //   const address = req.query.kuchAdd;
+    const city = req.query.kuchCity;
+    const state = req.query.kuchState;
+    const gender = req.query.kuchGender;
+    const bloodgroup = req.query.kuchBlood;
+    const medhistory = req.query.kuchMedHis;
+    const dob = req.query.kuchDate;
+    const hospitalname=req.query.kuchHospitalName;
+    const hospitalid=req.query.kuchHospitalId;
+    const units=req.query.kuchUnits;
+
+    //   //pic-uploading
+  
+    //   let filename;
+    //   if (req.files == null) {
+    //     filename = "nopic.jpg";
+    //   } else {
+    //     filename = req.files.ppic.name;
+    //     let path = process.cwd() + "/public/uploads/" + filename;
+    //     req.files.ppic.mv(path);
+    //   }
+    //   req.body.ppic = filename; //why this?
+  console.log(req.query);
+    mysql.query(
+      "insert into requests values(0,?,?,?,?,?,?,?,?,?,?,?,?,current_date); ",
+      [
+        email,
+        fullname,
+        mobile,
+        gender,
+        city,
+        state,
+        bloodgroup,
+        dob,
+        hospitalname,
+        hospitalid,
+        medhistory,
+        units
+      ],
+      function (err, respJson) {
+        if (err == null) {
+          console.log("Request sent Successfully");
+          // window.location = '/Frontend/html/customer-profile.html';
+          // return
+          resp.send("Request sent Successfully");
+        } else {
+            console.log(err);
+          resp.send(err);
+        }
+      }
+    );
+})

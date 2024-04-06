@@ -15,6 +15,10 @@ body{
     width: 0px; 
 }
 
+a{
+    text-decoration: none;
+    /* color:#ffffff ; */
+}
 
 .navbar{
     width:100vw;
