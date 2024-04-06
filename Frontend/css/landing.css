@@ -9,6 +9,7 @@
 }
 body{
     overflow-x: hidden;
+    background-color: #faf9eb;
 }
 
 ::-webkit-scrollbar {
