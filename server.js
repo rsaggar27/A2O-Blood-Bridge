@@ -12,9 +12,9 @@ app.use(fileuploader());
 app.use(express.static("Frontend"));
 
 const objConfig = {
-  host: "127.0.0.1",
-  user: "root",
-  password: "Admin123",
+  host: "bloodbridgedb.c18wggm4uyzh.eu-north-1.rds.amazonaws.com",
+  user: "admin",
+  password: "myAdmin1",
   database: "BloodBridgeDB",
   dateStrings: true, //isse hum date ko bhi fetch kr paate hain
 };
@@ -22,7 +22,9 @@ const objConfig = {
 const mysql = mysql2.createConnection(objConfig);
 
 mysql.connect(function (err) {
-  if (err == null) console.log("Connected to database");
+  if (err == null){ 
+    
+    console.log("Connected to database");}
   else console.log(err.message);
 });
 
@@ -142,7 +144,8 @@ app.get("/fetch-one", function (req, resp) {
         resp.send(err);
         return;
       }
-      // console.log(resultJsonAry);
+       console.log(resultJsonAry);
+      
       resp.send(resultJsonAry);
     }
   );
@@ -170,7 +173,7 @@ app.post("/profile-save", function (req, resp) {
   //     req.files.ppic.mv(path);
   //   }
   //   req.body.ppic = filename; //why this?
-
+console.log(req.body);
   mysql.query(
     "update users set fullname=?,dob=?, mobile=?, address=?,gender=? ,city=?, state=?, bloodgroup=?,medhistory=? where email=? ",
     [
@@ -187,6 +190,7 @@ app.post("/profile-save", function (req, resp) {
     ],
     function (err, respJson) {
       if (err == null) {
+        // console.log(respJson)
         console.log("RECORD UPDATED SUCCESSFULLY");
         // window.location = '/Frontend/html/customer-profile.html';
         // return;
@@ -294,7 +298,7 @@ app.get("/save-donation", function (req,resp) {
   );
 });
 
-app.get("save-request",function(req,resp){
+app.get("/save-request",function(req,resp){
     const email = req.query.kuchEmail;
     const fullname = req.query.kuchName;
     const mobile = req.query.kuchMobile;
@@ -322,7 +326,7 @@ app.get("save-request",function(req,resp){
     //   req.body.ppic = filename; //why this?
   console.log(req.query);
     mysql.query(
-      "insert into requests values(0,?,?,?,?,?,?,?,?,?,?,?,?,current_date); ",
+      "insert into requests values(0,?,?,?,?,?,?,?,?,?,?,?,current_date); ",
       [
         email,
         fullname,
@@ -338,6 +342,7 @@ app.get("save-request",function(req,resp){
         units
       ],
       function (err, respJson) {
+        console.log("hii, main aagya")
         if (err == null) {
           console.log("Request sent Successfully");
           // window.location = '/Frontend/html/customer-profile.html';
